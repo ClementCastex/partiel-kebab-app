@@ -3,6 +3,20 @@
 Bienvenue dans le projet **"Gestion des Recettes Kebab"**. Cette application permet de gérer des recettes, de lancer des commandes, et de suivre les commandes en cuisine dans un environnement moderne et interactif.
 
 ---
+## Contexte 📚
+
+Ce projet a été réalisé dans le cadre du **partiel de JavaScript** de l’année 2 à la **Normandie Web School**, le 30 janvier 2025.  
+L’objectif était de développer une application fonctionnelle en **Single Page Application (SPA)**, en respectant les consignes suivantes :
+
+- Utilisation exclusive de **JavaScript Vanilla** (sans jQuery).
+- Intégration facultative d’un **Framework CSS** (ici : Bootstrap 5).
+- Récupération de l’heure via une **API externe** : [TimeAPI](https://timeapi.io).
+- Respect des fonctionnalités demandées :
+  - Ajouter, visualiser et supprimer des recettes.
+  - Lancer des commandes en cuisine.
+  - Visualiser et valider des commandes.
+
+Les critères de notation exigeaient une implémentation complète et fonctionnelle de toutes les fonctionnalités.
 
 ## Fonctionnalités 🛠️
 
