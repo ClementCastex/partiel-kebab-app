@@ -204,13 +204,10 @@ function validateOrder(orderId) {
     updateOrderList();
 }
 
-// Sélectionner le bouton pour basculer entre les thèmes
 const themeToggleButton = document.getElementById("theme-toggle");
 
-// Vérifier le thème actuel depuis le stockage local (localStorage)
 let isDarkMode = JSON.parse(localStorage.getItem("isDarkMode")) ?? true;
 
-// Fonction pour appliquer le thème
 function applyTheme() {
     if (isDarkMode) {
         document.body.classList.remove("light");
@@ -227,18 +224,13 @@ function applyTheme() {
     }
 }
 
-// Ajouter un événement au bouton pour changer le thème
 themeToggleButton.addEventListener("click", () => {
     isDarkMode = !isDarkMode;
-    localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode)); // Sauvegarder le choix dans localStorage
+    localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode)); 
     applyTheme();
 });
 
-// Appliquer le thème au chargement de la page
 applyTheme();
-
-
-
 loadOrdersFromLocalStorage();
 updateRecipeList();
 updateRecipeSelect();

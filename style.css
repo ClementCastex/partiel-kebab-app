@@ -84,7 +84,8 @@ span,strong{
     color :#F7F3F7;
 }
 
-/* Thème clair */
+/********** Thème clair **********/
+
 body.light {
     background-color: #F7F3F7!important ; 
     color: #23272A;
@@ -110,14 +111,13 @@ body.light {
 }
 
 body.light strong {
-    color: #23272A; /* Texte sombre */
+    color: #23272A;
 }
 body.light span {
-    color: #23272A; /* Texte sombre */
+    color: #23272A; 
 }
 
-/* Pour les listes <li> dans le thème clair */
 body.light li {
-    color: #23272A; /* Texte sombre */
+    color: #23272A; 
     list-style-type: "✔️ ";
 }
