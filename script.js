@@ -1,10 +1,15 @@
-
 const recipeForm = document.getElementById("recipe-form");
 const recipeNameInput = document.getElementById("recipe-name");
 const recipeIngredientsInput = document.getElementById("recipe-ingredients");
 const recipeList = document.getElementById("recipe-list");
 
-let recipes = [];
+
+let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+
+function saveRecipesToLocalStorage() {
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+}
 
 
 recipeForm.addEventListener("submit", (e) => {
@@ -16,17 +21,16 @@ recipeForm.addEventListener("submit", (e) => {
     if (name && ingredients) {
         const recipe = { name, ingredients };
         recipes.push(recipe); 
+        saveRecipesToLocalStorage(); 
         updateRecipeList(); 
     }
-
 
     recipeNameInput.value = "";
     recipeIngredientsInput.value = "";
 });
 
-
 function updateRecipeList() {
-    recipeList.innerHTML = ""; 
+    recipeList.innerHTML = "";
 
     recipes.forEach((recipe, index) => {
         const li = document.createElement("li");
@@ -35,7 +39,7 @@ function updateRecipeList() {
         title.textContent = `🍽️ ${recipe.name}`;
 
         const ingredientList = document.createElement("ul");
-        recipe.ingredients.split(",").forEach(ingredient => {
+        recipe.ingredients.split(",").forEach((ingredient) => {
             const ingredientItem = document.createElement("li");
             ingredientItem.textContent = `- ${ingredient.trim()}`;
             ingredientList.appendChild(ingredientItem);
@@ -45,17 +49,17 @@ function updateRecipeList() {
         deleteButton.textContent = "❌";
         deleteButton.onclick = () => deleteRecipe(index);
 
-
         li.appendChild(title);
         li.appendChild(ingredientList);
         li.appendChild(deleteButton);
-        
         recipeList.appendChild(li);
     });
 }
 
-
 function deleteRecipe(index) {
-    recipes.splice(index, 1);
-    updateRecipeList();
+    recipes.splice(index, 1); 
+    saveRecipesToLocalStorage();
+    updateRecipeList(); 
 }
+
+updateRecipeList();
