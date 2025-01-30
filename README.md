@@ -1,4 +1,4 @@
-# Gestion des Recettes Kebab 🍖
+# Kebab App 🍖
 
 Bienvenue dans le projet **"Gestion des Recettes Kebab"**. Cette application permet de gérer des recettes, de lancer des commandes, et de suivre les commandes en cuisine dans un environnement moderne et interactif.
 
