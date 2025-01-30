@@ -1,0 +1,95 @@
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #23272A; 
+    color: #F7F3F7; 
+    text-align: center;
+}
+
+
+h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 900; 
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #CCAA1D; 
+}
+
+h2 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #F7F3F7; 
+}
+
+
+section {
+    background: #2C2F33; 
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px auto;
+    max-width: 500px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+input {
+    width: 96%;
+    background-color: #23272A;
+    color: #F7F3F7;
+    border: 1px solid #5B348B; 
+}
+
+button {
+    background: #5B348B;
+    color: #F7F3F7;
+    cursor: pointer;
+    font-weight: 700; 
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #CCAA1D;
+}
+
+
+#recipe-list {
+    padding: 0;
+}
+
+#recipe-list li {
+    background: #2C2F33; 
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+}
+
+#recipe-list strong {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 900; 
+    font-size: 18px;
+    color: #F7F3F7;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#recipe-list ul li {
+    list-style-type: "✔️ ";
+    font-size: 16px;
+    color: #F7F3F7;
+    font-family: 'Quicksand', sans-serif;
+}
