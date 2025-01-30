@@ -5,49 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kebab Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-dark text-light">
+    <div class="container my-4">
+        <h1 class="text-center text-warning">Gestion des Recettes Kebab</h1>
 
-    <h1>Gestion des Recettes Kebab</h1>
+        <div class="row mt-4">
+            <!-- Colonne gauche -->
+            <div class="col-md-4">
+                <!-- Ajouter une recette -->
+                <div class="card bg-secondary mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title">Ajouter une recette</h2>
+                        <form id="recipe-form">
+                            <div class="mb-3">
+                                <input type="text" id="recipe-name" class="form-control" placeholder="Nom de la recette"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" id="recipe-ingredients" class="form-control"
+                                    placeholder="Ingrédients (séparés par des virgules)" required>
+                            </div>
+                            <button type="submit" class="btn btn-warning w-100">Ajouter</button>
+                        </form>
+                    </div>
+                </div>
 
-    <div class="container">
-        <!-- Colonne de gauche -->
-        <div class="left">
-            <section class="add-recipe">
-                <h2>Ajouter une recette</h2>
-                <form id="recipe-form">
-                    <input type="text" id="recipe-name" placeholder="Nom de la recette" required>
-                    <input type="text" id="recipe-ingredients" placeholder="Ingrédients (séparés par des virgules)"
-                        required>
-                    <button type="submit">Ajouter</button>
-                </form>
-            </section>
+                <!-- Envoyer une commande -->
+                <div class="card bg-secondary mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title">Envoyer une commande en cuisine</h2>
+                        <div class="mb-3">
+                            <select id="recipe-select" class="form-select">
+                                <option value="">-- Choisissez une recette --</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" id="sauce" class="form-control" placeholder="Choisissez une sauce"
+                                required>
+                        </div>
+                        <button id="send-order" class="btn btn-warning w-100">Envoyer</button>
+                    </div>
+                </div>
 
-            <section class="send-recipe">
-                <h2>Envoyer une commande en cuisine</h2>
-                <select id="recipe-select">
-                    <option value="">-- Choisissez une recette --</option>
-                </select>
-                <input type="text" id="sauce" placeholder="Choisissez une sauce" required>
-                <button id="send-order">Envoyer</button>
-            </section>
+                <!-- Commandes en cuisine -->
+                <div class="card bg-secondary">
+                    <div class="card-body">
+                        <h2 class="card-title">Commandes en cuisine</h2>
+                        <ul id="order-list" class="list-group"></ul>
+                    </div>
+                </div>
+            </div>
 
-            <section class="order-kitchen">
-                <h2>Commandes en cuisine</h2>
-                <ul id="order-list"></ul>
-            </section>
-        </div>
-
-        <!-- Colonne de droite -->
-        <div class="show-recipe">
-            <h2>Recettes disponibles</h2>
-            <ul id="recipe-list"></ul>
+            <!-- Colonne droite -->
+            <div class="col-md-8">
+                <div class="card bg-secondary">
+                    <div class="card-body">
+                        <h2 class="card-title">Recettes disponibles</h2>
+                        <div id="recipe-list" class="row g-3"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-
     <script src="script.js"></script>
 </body>
 

@@ -48,13 +48,22 @@ recipeForm.addEventListener("submit", (e) => {
 
 
 function updateRecipeList() {
-    recipeList.innerHTML = "";
+    const recipeList = document.getElementById("recipe-list");
+    recipeList.innerHTML = ""; 
 
     recipes.forEach((recipe, index) => {
-        const li = document.createElement("li");
+
+        const card = document.createElement("div");
+        card.className = "col-md-4"; 
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "recipe-card";
+
 
         const title = document.createElement("strong");
         title.textContent = `🍽️ ${recipe.name}`;
+        cardBody.appendChild(title);
+
 
         const ingredientList = document.createElement("ul");
         recipe.ingredients.split(",").forEach((ingredient) => {
@@ -62,17 +71,19 @@ function updateRecipeList() {
             ingredientItem.textContent = `- ${ingredient.trim()}`;
             ingredientList.appendChild(ingredientItem);
         });
+        cardBody.appendChild(ingredientList);
+
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "❌";
+        deleteButton.className = "delete-button";
         deleteButton.onclick = () => deleteRecipe(index);
-
-        li.appendChild(title);
-        li.appendChild(ingredientList);
-        li.appendChild(deleteButton);
-        recipeList.appendChild(li);
+        cardBody.appendChild(deleteButton);
+        card.appendChild(cardBody);
+        recipeList.appendChild(card);
     });
 }
+
 
 
 function deleteRecipe(index) {
