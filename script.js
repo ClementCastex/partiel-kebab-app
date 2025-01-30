@@ -204,6 +204,41 @@ function validateOrder(orderId) {
     updateOrderList();
 }
 
+// Sélectionner le bouton pour basculer entre les thèmes
+const themeToggleButton = document.getElementById("theme-toggle");
+
+// Vérifier le thème actuel depuis le stockage local (localStorage)
+let isDarkMode = JSON.parse(localStorage.getItem("isDarkMode")) ?? true;
+
+// Fonction pour appliquer le thème
+function applyTheme() {
+    if (isDarkMode) {
+        document.body.classList.remove("light");
+        document.querySelectorAll(".card-body, .recipe-card, .list-group-item, .delete-button, .btn, .card-title").forEach(el => {
+            el.classList.remove("light");
+        });
+        themeToggleButton.textContent = "Basculer en mode clair";
+    } else {
+        document.body.classList.add("light");
+        document.querySelectorAll(".card-body, .recipe-card, .list-group-item, .delete-button, .btn, .card-title").forEach(el => {
+            el.classList.add("light");
+        });
+        themeToggleButton.textContent = "Basculer en mode sombre";
+    }
+}
+
+// Ajouter un événement au bouton pour changer le thème
+themeToggleButton.addEventListener("click", () => {
+    isDarkMode = !isDarkMode;
+    localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode)); // Sauvegarder le choix dans localStorage
+    applyTheme();
+});
+
+// Appliquer le thème au chargement de la page
+applyTheme();
+
+
+
 loadOrdersFromLocalStorage();
 updateRecipeList();
 updateRecipeSelect();

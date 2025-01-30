@@ -84,3 +84,40 @@ span,strong{
     color :#F7F3F7;
 }
 
+/* Thème clair */
+body.light {
+    background-color: #F7F3F7!important ; 
+    color: #23272A;
+}
+
+.card-body.light {
+    background-color: #E0E0E0;
+    color: #23272A;
+}
+
+.recipe-card.light {
+    background-color: #FFFFFF;
+    color: #23272A;
+}
+
+.list-group-item.light {
+    background-color: #FFFFFF;
+    color: #23272A;
+}
+
+.card-title.light {
+    color: #23272A; 
+}
+
+body.light strong {
+    color: #23272A; /* Texte sombre */
+}
+body.light span {
+    color: #23272A; /* Texte sombre */
+}
+
+/* Pour les listes <li> dans le thème clair */
+body.light li {
+    color: #23272A; /* Texte sombre */
+    list-style-type: "✔️ ";
+}
