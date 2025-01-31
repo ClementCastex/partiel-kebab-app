@@ -103,8 +103,7 @@ Ajoute ici des captures d'écran ou un lien vers une vidéo/une démo du projet 
 ---
 
 ## Auteur 👨‍💻
-- **Ton Prénom Nom**
-- Contact : [Ton Email](mailto:tonemail@example.com)
-- GitHub : [https://github.com/ton-repo](https://github.com/ton-repo)
+Clément Castex 
+
 
 ---
